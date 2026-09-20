@@ -1,0 +1,45 @@
+questions = ("how many elements are in the periodic table ? :",
+             "which animal lays the largest egg ?:",
+             "what is the most abundent gas in the earth?:",
+             "how many bones are in the human body?:",
+             "which planet in the solar system is the hottest?:")
+
+options =(("A.116", "B.117", "C.118", "D.119"),
+          ("A. elephant", "B. ostrich", "C. penguin", "D. crocodile"),
+          ("A. nitrogen", "B. oxygen", "C. carbon dioxide", "D. argon"),
+          ("A. 206", "B. 207", "C. 208", "D. 209"),
+          ("A. mercury", "B. venus", "C. mars", "D. jupiter"))
+
+answers = ("C","D","A","A","B")
+guesses =[]
+score = 0
+quest_num=0
+
+for question in questions :
+    print("------------------------")
+    print(question)
+    for option in options[quest_num] :
+        print(option)
+    
+
+    guess = input("enter (A,B,C,D) : ").upper()
+    guesses.append(guess)
+    if guess==answers[quest_num]:
+        score+=1
+        print("CORRECT")
+    else:
+        print("INCORRECT")
+        print(f"the correct answer is {answers[quest_num]}")
+    quest_num+=1
+
+print("-----------------------------")
+print("           result")
+print("-----------------------------")
+
+print("answer: ", end=" ")
+for answer in answers:
+    print (answer,end=" ")
+print()
+
+score =int(score/len(questions)*100)
+print(f"your score is :{score}%")
